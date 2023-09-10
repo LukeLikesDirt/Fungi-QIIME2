@@ -1,0 +1,16 @@
+# Name the environment
+name: Extract_ITS
+# Tell Conda where to look for software that you want to install
+channels:
+    - bioconda
+    - conda-forge
+    - defaults
+# Tell Conda the software that you want to install
+dependencies:
+    - fastqc=0.12.1
+    - multiqc=1.15
+    - cutadapt=4.4
+    - ITSxpress=2.0.0
+    - vsearch=2.22.1
+    - Hmmer=3.1b2
+    - Biopython=1.81

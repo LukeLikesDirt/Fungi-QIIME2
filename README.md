@@ -8,7 +8,7 @@ This pipeline is loosely based on the recommendations from the following publica
  - [Best practices in metabarcoding of fungi: From experimental design to results](https://onlinelibrary.wiley.com/doi/full/10.1111/mec.16460)
  - [ITS alchemy: On the use of ITS as a DNA marker in fungal ecology](https://www.sciencedirect.com/science/article/pii/S175450482300051X)
 
-##Programs used
+## Programs used
  - [FastQC v0.12.1](https://github.com/s-andrews/FastQC)
  - [MultiQC v1.15](https://github.com/s-andrews/FastQC)
  - [Cutadapt v4.4](https://cutadapt.readthedocs.io/en/stable/)

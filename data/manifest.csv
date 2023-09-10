@@ -1,0 +1,7 @@
+﻿sample-id,absolute-filepath,direction
+Bal1,/data/group/frankslab/project/LFlorence/fungal_bioinformatics_qimme2/data/04.ITS_Extracted/Bal1-Custom_K75VR_ATGGTTGACT-GGCCTGTCCT_L001_R1.fastq,forward
+Bal2,/data/group/frankslab/project/LFlorence/fungal_bioinformatics_qimme2/data/04.ITS_Extracted/Bal2-Custom_K75VR_TATTGCGCTC-CTGTGTTAGG_L001_R1.fastq,forward
+Bal3,/data/group/frankslab/project/LFlorence/fungal_bioinformatics_qimme2/data/04.ITS_Extracted/Bal3-Custom_K75VR_ACGCCTTGTT-TAAGGAACGT_L001_R1.fastq,forward
+Bal1,/data/group/frankslab/project/LFlorence/fungal_bioinformatics_qimme2/data/04.ITS_Extracted/Bal1-Custom_K75VR_ATGGTTGACT-GGCCTGTCCT_L001_R2.fastq,reverse
+Bal2,/data/group/frankslab/project/LFlorence/fungal_bioinformatics_qimme2/data/04.ITS_Extracted/Bal2-Custom_K75VR_TATTGCGCTC-CTGTGTTAGG_L001_R2.fastq,reverse
+Bal3,/data/group/frankslab/project/LFlorence/fungal_bioinformatics_qimme2/data/04.ITS_Extracted/Bal3-Custom_K75VR_ACGCCTTGTT-TAAGGAACGT_L001_R2.fastq,reverse

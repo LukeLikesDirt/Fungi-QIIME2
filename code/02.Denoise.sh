@@ -24,7 +24,7 @@ module load QIIME2/2022.8
 ## The more 'relaxed' filtering approach in DADA2 of 'maxEE=2' is appropriate as that algorithm DADA2 accounts for sequence quality in its error model.
 
 ## There should be no need to trim or truncate if ITS subregions have been extracted as ITSxpress implements a VSEARCH quality filtering step.
-## However, you cen check the 'ITS_extracted_reads.qzv' file in the '04.ITS_Extracted' fodler to ensure qultiy is good at the distal ends.
+## However, you can check the 'ITS_extracted_reads.qzv' file in the '04.ITS_Extracted' folder to ensure quality is good at the distal ends.
 
 ## DADA2 gives you the option of two types of chimera filtering: 
 ## 'consensus' (default) does de novo identification in each sample, takes a vote across samples, and removes all ASVs identified as chimeras in a high enough fraction of the samples in which they were present
@@ -41,9 +41,6 @@ qiime dada2 denoise-paired \
     --p-max-ee-r 3 \
     --output-dir $denoised \
     --verbose
-    #--o-table $denoised/table.qza \
-    #--o-representative-sequences $denoised/representative_sequences.qza \
-    #--o-denoising-stats $denoised/denoising_stats.qza \
 
 qiime tools export \
     --input-path $denoised/denoising_stats.qza \
@@ -60,8 +57,9 @@ qiime feature-table summarize \
 ## This step is optional but recommended as most reference-based chimeras tend to be true chimeras.
 
 ## Import refernece dataset into qiime2
-## This step has been commented out because it has already been completed (see the 'uchimeRef_ITS2.qza' file in the 'reference_datasets' folder
+## This step has been commented out because it has already been completed (see the available 'uchimeRef_ITS2.qza' file in the 'reference_datasets' folder
 ## Uncomment and re-run this step to update the reference dataset
+## See the README.md file for instructions on where to find the latest UNITE database
 #uchimeRef_ITS2_fasta=$ref_seqs/uchime_reference_dataset_16_20_2022_ITS2.fasta
 #qiime tools import \
     --type FeatureData[Sequence] \

@@ -5,26 +5,23 @@
 #SBATCH --partition=day
 
 ## Prepare paired-end Illumina data for denoising in QIIME2 using DADA2:
-##  - This script has been developed for the Applied and Environmental Microbiology Group, La Trobe University, Melbourne, Australia. 
 ##  - This script is for data that has been demultiplexed.
 ##  - This script is for ITS2 data; change to ITS1 if analysing the ITS1 region.
 ##  - This script is for paired-end Illumina data; change to single-end mode if quality does not permit merging for paired-end analysis.
 ##  - NOTE: Paring reads is recommended as a critical quality filter step to remove erroneous sequences, such as chimeras and sequences that have been subjected to index bleeding.
-##  - This first step is done on your local computer because of issues in having ITSxpress installed on the La Trobe HPC; change to HPC if you have ITSxpress installed there. 
 
-## Required software:
-##  - miniconda (or conda): https://docs.conda.io/projects/miniconda/en/latest/
-##  - micromamba (or mamba): https://mamba.readthedocs.io/en/latest/user_guide/micromamba.html (mamba is optional and can be replaced with conda, but mamba is recommended for faster package installations)
-##  - fastqc: https://www.bioinformatics.babraham.ac.uk/projects/fastqc/
-##  - multiqc: https://multiqc.info/
-##  - cutadapt: https://cutadapt.readthedocs.io/en/stable/
-##  - ITSxpress: https://github.com/usda-ars-gbru/itsxpress
+## This pipeline has been developed for use on La Trobe University's HPC, LIMS.
+## The LIMS-HPC does not currently have the required software installed for this initial ITS extraction step, so the following steps are required to install the software and create a conda environment for this pipeline
 
-## Create a conda environment for ITS extraction
-#micromamba env create -f environment.yml   # Alternatively, use 'conda env create -f environment.yml', but micromamba is faster
+## If you cannot create an environment on the HPC, run the following code on your local computer: `mamba env create -f environment.yml`
+## Alternatively, use `conda env create -f environment.yml`, but mamba is faster and handles dependencies better
+## Activate the conda environment: 'mamba activate Extract_ITS'
+## Alternatively, use `conda activate Extract_ITS`; `$eval "$(mamba shell hook --shell bash)"` may be required to activate mamba
+
+## If running on the LIMS-HPC, run: `conda create -n environemnt.yml`
+## On the HPC, activate the conda environment: `conda activate Extract_ITS`
 
 ## Activate the conda environment
-#micromamba activate Extract_ITS            # Alternatively, use 'conda activate Extract_ITS'; $eval "$(micromamba shell hook --shell bash)" may be required to activate micromamba
 conda activate Extract_ITS
 
 ## Organise directories

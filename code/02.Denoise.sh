@@ -20,6 +20,8 @@ module load QIIME2/2022.8
 ######################################################### Denoise data using DADA2
 ######################################################### 
 
+echo Denoising data using DADA2
+
 ## NOTE: 'maxEE=2' is a relaxed error rate for programs such as VSEARCH/UNOISE2, where 'maxEE=1' is a more appropriate error parameter.
 ## The more 'relaxed' filtering approach in DADA2 of 'maxEE=2' is appropriate as that algorithm DADA2 accounts for sequence quality in its error model.
 
@@ -53,6 +55,8 @@ qiime feature-table summarize \
 #########################################################
 ######################################################### Reference-based chimera filtering with vsearch
 ######################################################### 
+
+echo Reference-based chimera filtering with vsearch
 
 ## This step is optional but recommended as most reference-based chimeras tend to be true chimeras.
 

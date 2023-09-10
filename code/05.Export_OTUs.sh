@@ -18,6 +18,8 @@ module load QIIME2/2022.8
 ######################################################### Export OTU tables
 #########################################################
 
+echo Exporting OTU table
+
 qiime tools export \
     --input-path $clustered/table_97.qza \
     --output-path $output

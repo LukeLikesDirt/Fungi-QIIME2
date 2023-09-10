@@ -24,6 +24,8 @@ UNITE_ITS2=$path/data/reference_datasets/ITS2_classifier.qza
 ######################################################### Assign taxonomy
 ######################################################### 
 
+echo Assigning taxonomy
+
 qiime feature-classifier classify-sklearn \
     --i-classifier $UNITE_ITS2 \
     --i-reads $clustered/rep_seqs_97.qza \

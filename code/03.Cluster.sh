@@ -19,6 +19,8 @@ module load QIIME2/2022.8
 ######################################################### OPTION 1: Cluster non-chimeric sequences after VSEARCH reference-based chimera removal
 #########################################################
 
+echo Clustering OTUs at 97% similarity
+
 ## This option is active by default in the script
 
 qiime vsearch cluster-features-de-novo \

@@ -8,7 +8,7 @@
 
 ## Please find the latest UNITE classifiers with ITS regions extracted (ITS1_classifier.qza and ITS2_classifier.qza) in the 'reference_datasets' folder
 ## This script has been provided to update the classifier with future datasets
-## See the README.md file for instructions on where to find the latest UNITE database
+## See the 'README.md' file in the 'data' folder for instructions on where to find the latest UNITE database
 
 echo "Starting at: $(date)"
 

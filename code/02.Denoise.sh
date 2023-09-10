@@ -59,7 +59,7 @@ qiime feature-table summarize \
 ## Import refernece dataset into qiime2
 ## This step has been commented out because it has already been completed (see the available 'uchimeRef_ITS2.qza' file in the 'reference_datasets' folder
 ## Uncomment and re-run this step to update the reference dataset
-## See the README.md file for instructions on where to find the latest UNITE database
+## See the 'README.md' file in the 'data' folder for instructions on where to find the latest UNITE database
 #uchimeRef_ITS2_fasta=$ref_seqs/uchime_reference_dataset_16_20_2022_ITS2.fasta
 #qiime tools import \
     --type FeatureData[Sequence] \

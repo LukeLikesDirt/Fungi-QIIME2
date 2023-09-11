@@ -13,24 +13,26 @@
 ## This pipeline has been developed for use on La Trobe University's HPC, LIMS.
 ## The LIMS-HPC does not currently have the required software installed for this initial ITS extraction step, so the following steps are required to install the software and create a conda environment for this pipeline
 ## Create a conda environment on the HPC: 
-##  - Install mambforge into your root directory: see https://github.com/conda-forge/miniforge#mambaforge
-##  - Once installed, restart your terminal
+##  - Install mambforge into your root directory: see https://github.com/conda-forge/miniforge#mambaforge for details
 ##  - Create a conda environment using by running th following code: `mamba env create -f environemt.yml`
 
-## Organise directories
-path='path/to/your/project'                      # Path to the project directory, which contains a 'data' subdirectory with a'01.Raw_data' subdirectory with demultiplexed 'fastq' files
-cd $path
-raw_data=$path/data/01.Raw_data                  # Subdirectory containing the raw data
-mkdir -p $path/data/02.Quality_check             # Subdirectory for quality check output
-qualityCheck=$path/data/02.Quality_check     
-mkdir -p $path/data/03.Primers_cut               # Subdirectory for cutadapt output
-mkdir -p $path/data/03.Primers_cut/log           # Subdirectory for cutadapt log files
-primersCut=$path/data/03.Primers_cut          
-mkdir -p $path/data/04.ITS_extracted             # Subdirectory for ITSxpress output
-ITSx=$path/data/04.ITS_extracted             
-
 ## Activate the conda environment
-mamba activate Extract_ITS
+root='your/user/root'                           # Path to user root e.g. /data/group/'lab_name'/home/'user_name'/
+source $root/mambaforge/etc/profile.d/conda.sh  # This line needs to be run because activating envionemnts in bash scrpits causes errors  
+conda activate Extract_ITS
+
+## Organise directories
+path='path/to/your/project'                     # Your project path, which should contain 'data/01.Raw_data/' folders with demultiplexed 'fastq' files
+raw_data=$path/data/01.Raw_data                 # Path to raw data
+mkdir -p $path/data/02.Quality_check            # Create directory for quality check output
+qualityCheck=$path/data/02.Quality_check        # Path to quality check output
+mkdir -p $path/data/03.Primers_cut              # Create directory for cutadapt output
+mkdir -p $path/data/03.Primers_cut/log          # Create directory for cutadapt log files
+primersCut=$path/data/03.Primers_cut            # Path to cutadapt output
+mkdir -p $path/data/04.ITS_extracted            # Create directory for ITSxpress output
+ITSx=$path/data/04.ITS_extracted                # Path to ITSxpress output
+## Set working directory
+cd $path             
 
 ###################################################
 ################################################### FastQC and MultiQC - quality check

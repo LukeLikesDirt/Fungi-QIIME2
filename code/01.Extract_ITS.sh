@@ -12,17 +12,10 @@
 
 ## This pipeline has been developed for use on La Trobe University's HPC, LIMS.
 ## The LIMS-HPC does not currently have the required software installed for this initial ITS extraction step, so the following steps are required to install the software and create a conda environment for this pipeline
-
-## If you cannot create an environment on the HPC, run the following code on your local computer: `mamba env create -f environment.yml`
-## Alternatively, use `conda env create -f environment.yml`, but mamba is faster and handles dependencies better
-## Activate the conda environment: 'mamba activate Extract_ITS'
-## Alternatively, use `conda activate Extract_ITS`; `$eval "$(mamba shell hook --shell bash)"` may be required to activate mamba
-
-## If running on the LIMS-HPC, run: `conda create -n environemnt.yml`
-## On the HPC, activate the conda environment: `conda activate Extract_ITS`
-
-## Activate the conda environment
-conda activate Extract_ITS
+## Create a conda environment on the HPC: 
+##  - Install mambforge into your root directory: see https://github.com/conda-forge/miniforge#mambaforge
+##  - Once installed, restart your terminal
+##  - Create a conda environment using by running th following code: `mamba env create -f environemt.yml`
 
 ## Organise directories
 path='path/to/your/project'                      # Path to the project directory, which contains a 'data' subdirectory with a'01.Raw_data' subdirectory with demultiplexed 'fastq' files
@@ -35,6 +28,9 @@ mkdir -p $path/data/03.Primers_cut/log           # Subdirectory for cutadapt log
 primersCut=$path/data/03.Primers_cut          
 mkdir -p $path/data/04.ITS_extracted             # Subdirectory for ITSxpress output
 ITSx=$path/data/04.ITS_extracted             
+
+## Activate the conda environment
+mamba activate Extract_ITS
 
 ###################################################
 ################################################### FastQC and MultiQC - quality check
